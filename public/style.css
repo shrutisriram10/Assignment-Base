@@ -1,5 +1,11 @@
-.main{
+body {
+    font: normal 18px/1.5 "Fira Sans", "Helvetica Neue", sans-serif;
     background: lightseagreen;
-    height: 150px;
-    width: 150px;
+    color: rgb(0, 0, 0);
+    padding: 50px 0;
+  }
+h1 {
+      font-size: 3rem;
+      text-align: center;
+      font-weight: 800;
 }
