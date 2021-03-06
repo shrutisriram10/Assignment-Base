@@ -33,8 +33,6 @@ winndow.onload = windowActions;
 
 
 
-
-
 // const endpoint = '';
 
 // const cities = [];
