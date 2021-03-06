@@ -1,5 +1,5 @@
 async function windowActions() {
-    console.log('window loaded');
+    console.log('Window loaded');
     const form = document.querySelector('.userform');
     const search = document.querySelector('#name');
     const request = await fetch('/api');
@@ -29,7 +29,7 @@ async function windowActions() {
     });
 }
 
-winndow.onload = windowActions;
+window.onload = windowActions;
 
 
 
