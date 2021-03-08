@@ -5,12 +5,23 @@ async function windowActions() {
     const request = await fetch('/api');
 
     form.addEventListener('submit', (event) => {
+    form.addEventListener('submit', async (event) => {
         event.preventDefault();
         console.log('submit fired', search.value);
         const display = data.filter((record) => record.city.toUpperCase() === search.value.toUpperCase)
 
         // ^display is the filtered dataset
 
+    });
+
+    search.addEventListener('input', (event) => {
+        console.log('input', event.target.value);
+    });
+}
+
+window.onload = windowActions;
+
+// ++++++++++++++++++++++
         // HOW TO WRITE POST REQUEST
 
         // const request = await fetch('/api', {
@@ -21,6 +32,14 @@ async function windowActions() {
         //     body: JSON.stringify({data: search.value})
         // });
         // const data = await request.json();
+        // const data = await request.json(); 
+// ++++++++++++++++++++++
+
+
+
+
+
+
 
     });
 
