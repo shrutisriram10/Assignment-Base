@@ -16,9 +16,10 @@ h1 {
 }
 
 .suggestions {
-    margin: 0;
-    padding: 0;
+    margin: 100 px;
+    padding: 10 px;
     position: relative;
+    display: inline-block;
     /*perspective: 20px;*/
 }
   
