@@ -1,10 +1,10 @@
 async function windowActions() {
-    const data = await fetch('https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json')
+    const data = await fetch('https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json');
     const json = await data.json();
     function findMatches(wordToMatch, json) {
         return json.filter(place => { 
             const regex = new RegExp(wordToMatch, 'gi');
-            return place.zip.match(regex) || place.name.match(regex) || place.category.match(regex)
+            return (place.zip.match(regex) || place.name.match(regex) || place.category.match(regex))
         });
     }
     
