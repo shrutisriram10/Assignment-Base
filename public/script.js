@@ -1,8 +1,9 @@
 async function windowActions() {
     console.log('Window loaded');
+    const data = await fetch('https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json')
+    const json = await data.json();
     const form = document.querySelector('.userform');
     const search = document.querySelector('#name');
-    const request = await fetch('/api');
 
     form.addEventListener('submit', async (event) => {
         event.preventDefault();
@@ -16,6 +17,32 @@ async function windowActions() {
         console.log('input', event.target.value);
     });
 }
+
+function findMatches(wordToMatch, cites){
+    return cities.filter(place => {
+        const regex = new RegExp(wordToMatch, 'gi');
+        return place.city.match(regex) || place.state.match(regex)
+    });
+    // ^filter down into subset
+}
+
+function displayMatches(){
+    const matchArray = findMatches(this.value, cities);
+    const html = matchArray.map(place => {
+        const regex = new RegExp(this.value, 'gi');
+        const cityName = place.city.replace(regex, `<span clas = 'h1> $ {this.value}</spen>`);
+        const stateName = place.state.replace(regex, `<span clas = 'h1> $ {this.value}</spen>`)
+        return `
+        <li>
+            <span class = 'name'> $ {cityName}, 4{stateName}</span>
+            <span class = 'population'> $ {numberWithCommas(place.population)}</span>  
+        </li>
+        `;
+    }).join('');
+    suggestions.innerHTML = html;
+}
+
+
 
 window.onload = windowActions;
 
