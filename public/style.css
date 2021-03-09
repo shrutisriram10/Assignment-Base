@@ -49,3 +49,6 @@ span.population {
     font-size: 15px;
 }
   
+.name {
+    font-weight: bold;
+}
