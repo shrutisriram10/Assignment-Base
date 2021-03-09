@@ -33,19 +33,8 @@ h1 {
     padding: 20px;
     transition: background 0.2s;
     display: flex;
-    display: inline-block;
     justify-content: space-around;
     text-transform: capitalize;
-}
-  
-.suggestions li:nth-child(even) {
-    transform: perspective(100px) rotateX(3deg) translateY(2px) scale(1.001);
-    background: linear-gradient(lightskyblue, rgb(227, 180, 236));
-}
-  
-.suggestions li:nth-child(odd) {
-    transform: perspective(100px) rotateX(-3deg) translateY(3px);
-    background: linear-gradient(lightskyblue, rgb(227, 180, 236));
 }
   
 span.population {
